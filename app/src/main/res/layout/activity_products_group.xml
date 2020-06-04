@@ -20,13 +20,13 @@
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
 
+
     <ImageView
         android:id="@+id/back"
         android:layout_width="40dp"
         android:layout_height="wrap_content"
         android:paddingVertical="12dp"
         android:src="@drawable/back_blue" />
-
 
     <androidx.recyclerview.widget.RecyclerView
         android:id="@+id/recycler"

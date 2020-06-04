@@ -32,6 +32,7 @@
             android:textSize="20dp" />
     </LinearLayout>
 
+    <include layout="@layout/logobackground" />
 
     <androidx.recyclerview.widget.RecyclerView
         android:id="@+id/recycler"
