@@ -25,8 +25,8 @@ public class NotificationReciver extends BroadcastReceiver {
         String id=intent.getStringExtra( "id" );
         NotificationCompat.Builder builder=new NotificationCompat.Builder( context,"noti" )
                 .setContentTitle(name)
-                .setContentText(name+" is going to be expiry")
-                .setSmallIcon(R.drawable.ic_add_alert_black_24dp);
+                .setContentText(name+" is going to be expiring today!")
+                .setSmallIcon(R.drawable.logoclear);
         NotificationManagerCompat notificationManagerCompat=NotificationManagerCompat.from( context );
         notificationManagerCompat.notify( 200,builder.build() );
         database.deleteNoti( id);
