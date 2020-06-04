@@ -6,6 +6,8 @@
     android:layout_height="match_parent"
     tools:context=".view.GroupsActivity">
 
+    <include layout="@layout/logobackground" />
+    <include layout="@layout/addgroup" />
 
     <LinearLayout
         android:id="@+id/linearLayout"
