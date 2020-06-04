@@ -94,17 +94,16 @@
             />
 
         <EditText
+            android:id="@+id/productPrice"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:id="@+id/productPrice"
-            android:inputType="text"
             android:layout_below="@id/productURL"
-            android:padding="10dp"
-            android:hint="How much did it cost $? "
             android:layout_marginTop="16dp"
             android:fontFamily="casual"
-            android:textSize="20dp"
-            />
+            android:hint="How much did it cost $? "
+            android:inputType="numberDecimal"
+            android:padding="10dp"
+            android:textSize="20dp" />
 
         <EditText
             android:layout_width="match_parent"
@@ -173,12 +172,15 @@
 
         <RatingBar
             android:id="@+id/productRatings"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
+            android:layout_width="wrap_content"
+            android:layout_height="50dp"
+            android:layout_below="@id/productNotes"
+            android:layout_centerHorizontal="true"
+            android:layout_gravity="center"
             android:layout_marginTop="12dp"
             android:numStars="5"
-            android:rating="5"
-            />
+            android:padding="2dp"
+            android:rating="5" />
 
         <LinearLayout
             android:layout_width="match_parent"
@@ -212,8 +214,7 @@
                 android:layout_alignParentBottom="true"
                 android:layout_centerHorizontal="true"
                 android:background="@drawable/background"
-                android:text="Add Info"
-
+                android:text="Add Product"
                 android:textColor="@color/blackColor"
                 android:textStyle="bold" />
             <Button
