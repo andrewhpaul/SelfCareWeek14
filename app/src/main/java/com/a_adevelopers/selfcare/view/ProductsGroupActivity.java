@@ -14,6 +14,7 @@ import android.view.Window;
 import android.widget.ArrayAdapter;
 import android.widget.Button;
 import android.widget.EditText;
+import android.widget.ImageView;
 import android.widget.ListView;
 import android.widget.Toast;
 
@@ -38,10 +39,20 @@ public class ProductsGroupActivity extends AppCompatActivity {
     RecyclerView recyclerView;
     GroupProductAdapter adapter;
     SqlLite sql;
+    ImageView back;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate( savedInstanceState );
         setContentView( R.layout.activity_products_group );
+
+        back=findViewById( R.id.back );
+        back.setOnClickListener( new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                onBackPressed();
+            }
+        } );
+
         database=new SqlLite( this );
         if(getIntent().getStringExtra( "ID" ).equals( "g_id" )){
             Toast.makeText( this, "popofdsf", Toast.LENGTH_SHORT ).show();

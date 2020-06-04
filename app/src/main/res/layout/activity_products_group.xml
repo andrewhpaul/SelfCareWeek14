@@ -6,7 +6,6 @@
     android:layout_height="match_parent"
     tools:context=".view.ProductsGroupActivity">
 
-
     <TextView
         android:id="@+id/textView2"
         android:layout_width="match_parent"
@@ -20,6 +19,14 @@
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
+
+    <ImageView
+        android:id="@+id/back"
+        android:layout_width="40dp"
+        android:layout_height="wrap_content"
+        android:paddingVertical="12dp"
+        android:src="@drawable/back_blue" />
+
 
     <androidx.recyclerview.widget.RecyclerView
         android:id="@+id/recycler"
