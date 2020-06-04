@@ -21,12 +21,11 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_marginTop="16dp"
-            android:fontFamily="@font/annie_use_your_telescope"
             android:gravity="center"
             android:text="Product Information"
             android:textColor="@color/blackColor"
-            android:textSize="45sp"
-            android:textStyle="bold" />
+            android:textSize="33dp"
+            android:textStyle="normal" />
 
         <ImageView
             android:id="@+id/personImage"
@@ -45,12 +44,11 @@
             android:layout_height="wrap_content"
             android:layout_below="@id/personImage"
             android:layout_marginTop="16dp"
+            android:fontFamily="@font/andika"
             android:hint="Enter your product name*"
             android:inputType="textPersonName|textCapWords"
             android:padding="10dp"
-            android:fontFamily="casual"
-            android:textSize="20dp"
-            />
+            android:textSize="20dp" />
 
         <EditText
             android:id="@+id/productPurchaseDate"
@@ -60,7 +58,7 @@
             android:layout_marginTop="16dp"
             android:editable="false"
             android:focusableInTouchMode="false"
-            android:fontFamily="casual"
+            android:fontFamily="@font/andika"
             android:hint="Select your purchase date*"
             android:inputType="date"
             android:padding="10dp"
@@ -74,7 +72,7 @@
             android:layout_marginTop="16dp"
             android:editable="false"
             android:focusableInTouchMode="false"
-            android:fontFamily="casual"
+            android:fontFamily="@font/andika"
             android:hint="Select your product expiry*"
             android:inputType="date"
             android:padding="10dp"
@@ -89,7 +87,7 @@
             android:padding="10dp"
             android:hint="Enter product URL https://"
             android:layout_marginTop="16dp"
-            android:fontFamily="casual"
+            android:fontFamily="@font/andika"
             android:textSize="20dp"
             />
 
@@ -99,10 +97,11 @@
             android:layout_height="wrap_content"
             android:layout_below="@id/productURL"
             android:layout_marginTop="16dp"
-            android:fontFamily="casual"
+            android:fontFamily="@font/andika"
             android:hint="How much did it cost $? "
             android:inputType="numberDecimal"
             android:padding="10dp"
+            android:text="$"
             android:textSize="20dp" />
 
         <EditText
@@ -126,7 +125,7 @@
             android:layout_below="@id/productPrice"
             android:padding="10dp"
             android:hint="Enter a group for your product"
-            android:fontFamily="casual"
+            android:fontFamily="@font/andika"
             android:textSize="20dp"
             android:layout_marginTop="16dp"
             />
@@ -139,7 +138,7 @@
             android:layout_below="@id/productGroup"
             android:padding="10dp"
             android:hint="Enter a few product tags!"
-            android:fontFamily="casual"
+            android:fontFamily="@font/andika"
             android:textSize="20dp"
             android:layout_marginTop="16dp"
             />
@@ -153,7 +152,7 @@
             android:padding="10dp"
             android:hint="Any last notes?"
             android:layout_marginTop="16dp"
-            android:fontFamily="casual"
+            android:fontFamily="@font/andika"
             android:textSize="20dp"
             />
 
