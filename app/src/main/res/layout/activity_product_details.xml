@@ -6,17 +6,27 @@
     android:layout_height="match_parent"
     tools:context=".view.ProductDetailsActivity"
     android:orientation="vertical">
+
     <androidx.appcompat.widget.Toolbar
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:background="@color/colorPrimary">
+
+        <ImageView
+            android:id="@+id/back"
+            android:layout_width="40dp"
+            android:layout_height="wrap_content"
+            android:paddingVertical="12dp"
+            android:src="@drawable/back" />
+
         <TextView
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:textSize="17dp"
             android:text="Product Details"
             android:textColor="@android:color/white"
-            />
+            android:textSize="17dp" />
+
+
     </androidx.appcompat.widget.Toolbar>
 
     <ImageView
@@ -67,12 +77,20 @@
         android:text="Price"
         android:layout_gravity="center"/>
     <TextView
+        android:id="@+id/location"
+        android:layout_width="wrap_content"
+        android:textSize="20dp"
+        android:layout_marginTop="12dp"
+        android:layout_height="wrap_content"
+        android:text="Location"
+        android:layout_gravity="center"/>
+    <TextView
         android:id="@+id/group"
         android:layout_width="wrap_content"
         android:textSize="20dp"
         android:layout_marginTop="12dp"
         android:layout_height="wrap_content"
-        android:text="Name"
+        android:text="Group Name"
         android:layout_gravity="center"/>
 
     <TextView
@@ -89,7 +107,7 @@
         android:layout_height="wrap_content"
         android:layout_gravity="center"
         android:layout_marginTop="12dp"
-        android:text="tags"
+        android:text="Notes"
         android:textSize="20dp" />
     <TextView
         android:id="@+id/rating"
@@ -97,7 +115,7 @@
         android:layout_height="wrap_content"
         android:layout_gravity="center"
         android:layout_marginTop="12dp"
-        android:text="tags"
+        android:text="Rating"
         android:textSize="20dp" />
 
 

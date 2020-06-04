@@ -19,19 +19,29 @@ public class ProductDetailsActivity extends AppCompatActivity {
     private TextView pNameEt, pPurchaseDateEt, pExpiryDateEt, pUrlEt, pPriceEt, pLocationEt, pGroupEt, pTagEt, pNotesEt, pRatingEt;
 
     Uri imageUri;
+    ImageView back;
 
     private String name, purchaseDate, expiryDate, url, price, location, group, tag, notes, rating,id;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate( savedInstanceState );
         setContentView( R.layout.activity_product_details );
+
+        back=findViewById( R.id.back );
+        back.setOnClickListener( new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                onBackPressed();
+            }
+        } );
+
         pImageView = findViewById(R.id.pImageView);
         pNameEt = findViewById(R.id.name);
         pPurchaseDateEt = findViewById(R.id.date);
         pExpiryDateEt = findViewById(R.id.exp);
         pUrlEt = findViewById(R.id.url);
         pPriceEt = findViewById(R.id.price);
-        //pLocationEt = findViewById(R.id.productLocation);
+       // pLocationEt = findViewById(R.id.productLocation);
         pGroupEt = findViewById(R.id.group);
         pTagEt = findViewById(R.id.tags);
         pNotesEt = findViewById(R.id.notes);
@@ -49,16 +59,16 @@ public class ProductDetailsActivity extends AppCompatActivity {
         tag = intent.getStringExtra("TAG");
         notes = intent.getStringExtra("NOTES");
         rating = intent.getStringExtra("RATING");
-        pNameEt.setText(name);
-        pPurchaseDateEt.setText(purchaseDate);
-        pExpiryDateEt.setText(expiryDate);
-        pUrlEt.setText( ""+url );
-        pPriceEt.setText( ""+price );
-//        pLocationEt.setText( ""+location );
-        pGroupEt.setText( ""+group );
-        pTagEt.setText( ""+tag );
-        pNotesEt.setText( ""+notes );
-        pRatingEt.setText( ""+rating );
+        pNameEt.setText("Name: "+name);
+        pPurchaseDateEt.setText("Purchase Date: "+purchaseDate);
+        pExpiryDateEt.setText("Expiry Date: "+expiryDate);
+        pUrlEt.setText( "URL: "+url );
+        pPriceEt.setText( "Price: "+price );
+      //  pLocationEt.setText( "Location: "+location );
+        pGroupEt.setText( "Group: "+group );
+        pTagEt.setText( "Tags: "+tag );
+        pNotesEt.setText( "Notes: "+notes );
+        pRatingEt.setText( "Rating (1 to 5): "+rating );
         if (imageUri.toString().equals("null")) {
             pImageView.setImageResource(R.drawable.ic_action_addphoto);
         }
