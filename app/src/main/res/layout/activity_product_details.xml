@@ -31,26 +31,28 @@
 
     <ImageView
         android:id="@+id/pImageView"
-        android:layout_width="200dp"
-        android:layout_height="100dp"
+        android:layout_width="244dp"
+        android:layout_height="150dp"
         android:layout_gravity="center"
         android:layout_marginTop="12dp"
-        android:src="@drawable/ic_action_addphoto"/>
+        android:src="@drawable/ic_action_addphoto" />
+
     <TextView
         android:id="@+id/name"
         android:layout_width="wrap_content"
-        android:textSize="20dp"
-        android:layout_marginTop="12dp"
         android:layout_height="wrap_content"
+        android:layout_gravity="center"
+        android:layout_marginTop="12dp"
         android:text="Name"
-        android:layout_gravity="center"/>
+        android:textSize="20dp" />
+
     <TextView
         android:id="@+id/date"
         android:layout_width="wrap_content"
         android:textSize="20dp"
         android:layout_marginTop="12dp"
         android:layout_height="wrap_content"
-        android:text="date"
+        android:text="Date"
         android:layout_gravity="center"/>
     <TextView
         android:id="@+id/exp"
@@ -58,7 +60,7 @@
         android:textSize="20dp"
         android:layout_marginTop="12dp"
         android:layout_height="wrap_content"
-        android:text="exp"
+        android:text="Expiry"
         android:layout_gravity="center"/>
     <TextView
         android:id="@+id/url"
@@ -66,7 +68,7 @@
         android:textSize="20dp"
         android:layout_marginTop="12dp"
         android:layout_height="wrap_content"
-        android:text="url"
+        android:text="URL"
         android:layout_gravity="center"/>
     <TextView
         android:id="@+id/price"
@@ -99,7 +101,7 @@
         android:layout_height="wrap_content"
         android:layout_gravity="center"
         android:layout_marginTop="12dp"
-        android:text="tags"
+        android:text="Tags"
         android:textSize="20dp" />
     <TextView
         android:id="@+id/notes"
