@@ -29,6 +29,7 @@ import com.a_adevelopers.selfcare.db.SqlLite;
 
 import java.io.ByteArrayOutputStream;
 import java.io.IOException;
+import java.text.DateFormat;
 import java.util.Calendar;
 
 public class AddProductActivity extends AppCompatActivity {
@@ -179,7 +180,7 @@ public class AddProductActivity extends AppCompatActivity {
         if (!name.isEmpty() && !purchaseDate.isEmpty() && !expiryDate.isEmpty()) {
             dbHelper.updateInfo(
                     "" + id,
-                    "" + imageUri,
+                    "" + data1,
                     "" + name,
                     "" + purchaseDate,
                     "" + expiryDate,
@@ -330,17 +331,22 @@ public class AddProductActivity extends AppCompatActivity {
 
         @Override
         public void onDateSet(DatePicker view, int year, int month, int day) {
+            Calendar c = Calendar.getInstance();
+            c.set(Calendar.YEAR, year);
+            c.set(Calendar.MONTH, month);
+            c.set(Calendar.DAY_OF_MONTH, day);
+            String currentDateString = DateFormat.getDateInstance(DateFormat.FULL).format(c.getTime());
 
            if(i==0){
                Constants.DAY =day;
-               pPurchaseDateEt.setText(day +"/"+String.valueOf( month+1 )+ "/"+ year);
+               pPurchaseDateEt.setText(currentDateString);
 
            }else if(i==1) {
                if( Constants.DAY>day){
 
                    Toast.makeText( getContext(), "Choose Expiry Date for the Future", Toast.LENGTH_SHORT ).show();
                }else {
-                   pExpiryDateEt.setText(day +"/"+String.valueOf( month+1 )+ "/"+ year);
+                   pExpiryDateEt.setText(currentDateString);
                }
 
            }
