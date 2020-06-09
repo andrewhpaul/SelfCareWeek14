@@ -4,10 +4,8 @@ public class Constants {
 
     // db name
     public static final String DB_NAME = "sc";
-    public static int MONTH = 0;
     public static int G_ID=0 ;
     public static int DAY=0 ;
-    public static int YEAR = 0;
     // db version
     public static final int DB_VERSION = 1;
     // db table name
