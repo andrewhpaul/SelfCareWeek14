@@ -337,22 +337,14 @@ public class AddProductActivity extends AppCompatActivity {
             c.set(Calendar.DAY_OF_MONTH, day);
             String currentDateString = DateFormat.getDateInstance(DateFormat.FULL).format(c.getTime());
 
-           if(i==0){
-               Constants.DAY =day;
-               pPurchaseDateEt.setText(currentDateString);
+            if(i==0){
+                Constants.DAY = day;
+                pPurchaseDateEt.setText(currentDateString);
 
-           }else if(i==1) {
-               if( Constants.DAY>day){
+            }else {
+                    pExpiryDateEt.setText(currentDateString);
+                }
 
-                   Toast.makeText( getContext(), "Choose Expiry Date for the Future", Toast.LENGTH_SHORT ).show();
-               }else {
-                   pExpiryDateEt.setText(currentDateString);
-               }
-
-           }
-        }
-
-
-
+            }
     }
 }
