@@ -75,9 +75,9 @@ public class SelectAdapterNotification extends RecyclerView.Adapter<SelectAdapte
 
             holder.profileIv.setImageURI(Uri.parse(image));
         }
-        holder.name.setText("Name: "+name);
-        holder.purchaseDate.setText("Purchase Date "+purchaseDate);
-        holder.expiryDate.setText("Expiry Date: "+expiryDate);
+        holder.name.setText(name);
+        holder.purchaseDate.setText("Purchased: "+purchaseDate);
+        holder.expiryDate.setText("Expiration: "+expiryDate);
         holder.url.setVisibility( View.GONE );
         holder.price.setVisibility( View.GONE );
         holder.location.setVisibility( View.GONE );
