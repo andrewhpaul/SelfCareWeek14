@@ -32,13 +32,7 @@
         <activity android:name="com.KA2001.selfcare.view.SelectGroupProductActivity" />
         <activity android:name="com.KA2001.selfcare.view.NotificationActivity" />
         <activity android:name="com.KA2001.selfcare.view.AddProductActivity" />
-        <activity android:name="com.KA2001.selfcare.MainActivity">
-            <intent-filter>
-                <action android:name="android.intent.action.MAIN" />
-
-                <category android:name="android.intent.category.LAUNCHER" />
-            </intent-filter>
-        </activity>
+        <activity android:name="com.KA2001.selfcare.MainActivity"/>
 
         <receiver android:name="com.KA2001.selfcare.Controller.NotificationReciver" />
         <meta-data
