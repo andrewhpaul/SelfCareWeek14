@@ -19,7 +19,7 @@ public class NotificationReciver extends BroadcastReceiver {
         String id=intent.getStringExtra( "id" );
         NotificationCompat.Builder builder=new NotificationCompat.Builder( context,"noti" )
                 .setContentTitle(name)
-                .setContentText(name+" is going to be expiring today!")
+                .setContentText(name+" is going to be expiring soon!")
                 .setSmallIcon(R.drawable.logoclear);
         NotificationManagerCompat notificationManagerCompat=NotificationManagerCompat.from( context );
         notificationManagerCompat.notify( 200,builder.build() );
