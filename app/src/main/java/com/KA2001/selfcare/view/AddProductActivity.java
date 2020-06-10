@@ -9,6 +9,10 @@ import android.graphics.Bitmap;
 import android.net.Uri;
 import android.os.Bundle;
 import android.provider.MediaStore;
+import android.text.Editable;
+import android.text.Spanned;
+import android.text.TextWatcher;
+import android.text.style.ImageSpan;
 import android.util.Log;
 import android.view.View;
 import android.widget.Button;
@@ -16,43 +20,65 @@ import android.widget.DatePicker;
 import android.widget.EditText;
 import android.widget.ImageView;
 import android.widget.RatingBar;
+import android.widget.ScrollView;
+import android.widget.TextView;
 import android.widget.Toast;
 
 import androidx.appcompat.app.AlertDialog;
 import androidx.appcompat.app.AppCompatActivity;
+import androidx.appcompat.widget.AppCompatEditText;
 import androidx.fragment.app.DialogFragment;
 
 import com.KA2001.selfcare.MainActivity;
 import com.KA2001.selfcare.R;
 import com.KA2001.selfcare.db.Constants;
 import com.KA2001.selfcare.db.SqlLite;
+import com.allyants.chipview.ChipView;
+import com.allyants.chipview.SimpleChipAdapter;
+import com.google.android.material.chip.ChipDrawable;
+import com.skyhope.materialtagview.TagView;
 
 import java.io.ByteArrayOutputStream;
 import java.io.IOException;
 import java.text.DateFormat;
+import java.util.ArrayList;
 import java.util.Calendar;
+import java.util.List;
 
 public class AddProductActivity extends AppCompatActivity {
 
-    Button saveInfoBt, edit, delete;
+    Button saveInfoBt, edit, delete,addTag;
     Uri data1;
     Bitmap selectedImage;
     String TAG;
     private ImageView pImageView;
+    String tags;
+    Editable edit_s;
 
 
     private static EditText pNameEt, pPurchaseDateEt, pExpiryDateEt, pUrlEt, pPriceEt, pLocationEt, pGroupEt, pTagEt, pNotesEt ;
-   RatingBar pRatingEt;
+    RatingBar pRatingEt;
     private String name, purchaseDate, expiryDate, url, price, location, group, tag, notes, rating, id;
     private Uri imageUri;
     private SqlLite dbHelper;
     public static int i;
+    TagView tagView ;
+    List<String> tagList=new ArrayList<>(  );
+    private AppCompatEditText etchip;
+    private int SpannedLength = 0;
+    private int chipLength ;
+    String TEXT;
+    int INDEX=0;
+    boolean Do=false;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate( savedInstanceState );
         setContentView( R.layout.activity_add_product );
+        chip();
         dbHelper = new SqlLite( this );
+
+
         pImageView = findViewById( R.id.personImage );
         pImageView.setOnClickListener( new View.OnClickListener() {
             @Override
@@ -82,7 +108,9 @@ public class AddProductActivity extends AppCompatActivity {
         pUrlEt = findViewById( R.id.productURL );
         pPriceEt = findViewById( R.id.productPrice );
         pLocationEt = findViewById( R.id.productLocation );
-        pTagEt = findViewById( R.id.productTag );
+        // pGroupEt = findViewById( R.id.productGroup );
+
+        //  pTagEt = findViewById( R.id.productTag );
         pNotesEt = findViewById( R.id.productNotes );
         pRatingEt = findViewById( R.id.productRatings );
         pRatingEt.setRating( 5 );
@@ -122,7 +150,8 @@ public class AddProductActivity extends AppCompatActivity {
             pPriceEt.setText( "" + price );
             pLocationEt.setText( "" + location );
             pGroupEt.setText( "" + group );
-            pTagEt.setText( "" + tag );
+            etchip.setText( "" + tag );
+            // pTagEt.setText( "" + tag );
             pNotesEt.setText( "" + notes );
            // pRatingEt.setText( "" + rating );
             if(rating.equals( "1" )){
@@ -162,6 +191,72 @@ public class AddProductActivity extends AppCompatActivity {
         } );
     }
 
+    private void chip() {
+        etchip = (AppCompatEditText) findViewById(R.id.productTag);
+        addTag =  findViewById(R.id.add);
+        addTag.setOnClickListener( new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                if(!edit_s.toString().isEmpty()){
+                    addAsATag();
+                }else {
+                    Toast.makeText( AddProductActivity.this, "Enter Tag", Toast.LENGTH_SHORT ).show();
+                }
+            }
+        } );
+
+
+        etchip.addTextChangedListener( new TextWatcher() {
+            @Override
+            public void beforeTextChanged(CharSequence s, int start, int count, int after) {
+            }
+            @Override
+            public void onTextChanged(CharSequence s, int start, int before, int count) {
+                if(s.length() == SpannedLength - chipLength){
+                    SpannedLength = s.length();
+
+                }
+                TEXT=" "+s;
+
+            }
+            @Override
+            public void afterTextChanged(Editable s) {
+                setUpEditable(s,s.length());
+
+            }
+        });
+    }
+
+    private void addAsATag() {
+
+
+        if(true){
+            ChipDrawable chip = ChipDrawable.createFromResource(AddProductActivity.this, R.xml.chip);
+            chip.setText(edit_s.subSequence(SpannedLength, edit_s.length()));
+            /*if(Do){
+                chip.setText( TEXT.substring( INDEX ) );
+            }else {
+                chip.setText( TEXT );
+
+            }*/
+            INDEX=TEXT.length();
+            Log.i( "taglog",TEXT );
+            chip.setBounds(0, 0, chip.getIntrinsicWidth(), chip.getIntrinsicHeight());
+            ImageSpan span = new ImageSpan(chip);
+            edit_s.setSpan(span, SpannedLength, edit_s.length(), Spanned.SPAN_EXCLUSIVE_EXCLUSIVE);
+            SpannedLength = edit_s.length();
+            tags="Tags: "+String.valueOf( edit_s)+" ";
+            Do=true;
+
+            //Toast.makeText( AddProductActivity.this, tag, Toast.LENGTH_SHORT ).show();
+        }
+    }
+
+    private void setUpEditable(Editable s, int length) {
+        edit_s=s;
+        chipLength=length;
+    }
+
 
     private void editData() {
         name = "" + pNameEt.getText().toString().trim();
@@ -172,7 +267,8 @@ public class AddProductActivity extends AppCompatActivity {
         location = "" + pLocationEt.getText().toString().trim();
         price = "" + pPriceEt.getText().toString().trim();
         group = "" + pGroupEt.getText().toString().trim();
-        tag = "" + pTagEt.getText().toString().trim();
+        /* tag = "" + pTagEt.getText().toString().trim();*/
+        tag = "" + tags;
         notes = "" + pNotesEt.getText().toString().trim();
         rating = "" + /*pRatingEt.getText().toString().trim();*/ pRatingEt.getRating();
 
@@ -187,7 +283,7 @@ public class AddProductActivity extends AppCompatActivity {
                     "" + price,
                     "" + location,
                     "" + group,
-                    "" + tag,
+                    "" + tags,
                     "" + notes,
                     "" + rating
             );
@@ -208,7 +304,8 @@ public class AddProductActivity extends AppCompatActivity {
         location = "" + pLocationEt.getText().toString().trim();
         price = "" + pPriceEt.getText().toString().trim();
         group = "" + pGroupEt.getText().toString().trim();
-        tag = "" + pTagEt.getText().toString().trim();
+        /*   tag = "" + pTagEt.getText().toString().trim();*/
+        tag = "" + tags;
         notes = "" + pNotesEt.getText().toString().trim();
         rating = "" +pRatingEt.getRating();
 
