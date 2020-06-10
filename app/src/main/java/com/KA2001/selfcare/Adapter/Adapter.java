@@ -71,7 +71,7 @@ public class Adapter extends RecyclerView.Adapter<Adapter.Holder> implements Fil
 
         holder.name.setText(name);
         holder.purchaseDate.setText("Purchased: "+purchaseDate);
-        holder.expiryDate.setText("Expiry: "+expiryDate);
+        holder.expiryDate.setText("Expiration: "+expiryDate);
         holder.url.setVisibility( View.GONE );
         holder.price.setVisibility( View.GONE );
         holder.location.setVisibility( View.GONE );
