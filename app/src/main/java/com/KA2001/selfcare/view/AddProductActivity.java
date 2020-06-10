@@ -435,16 +435,10 @@ public class AddProductActivity extends AppCompatActivity {
 
             if(i==0){
                 Constants.DAY =day;
-                pPurchaseDateEt.setText(day +"/"+String.valueOf( month+1 )+ "/"+ year);
+                pPurchaseDateEt.setText(currentDateString);
 
-            }else if(i==1) {
-                if( Constants.DAY>day){
-
-                    Toast.makeText( getContext(), "Choose Expiry Date for the Future", Toast.LENGTH_SHORT ).show();
-                }else {
-                    pExpiryDateEt.setText(day +"/"+String.valueOf( month+1 )+ "/"+ year);
-                }
-
+            }else {
+                    pExpiryDateEt.setText(currentDateString);
             }
         }
     }
