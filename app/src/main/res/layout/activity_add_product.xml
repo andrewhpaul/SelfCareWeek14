@@ -101,7 +101,6 @@
             android:hint="How much did it cost $? "
             android:inputType="numberDecimal"
             android:padding="10dp"
-            android:text="$"
             android:textColor="#b5b5b5"
             android:textSize="20dp" />
 
