@@ -305,7 +305,7 @@ public class AddProductActivity extends AppCompatActivity {
         group = "" + pGroupEt.getText().toString().trim();
         //tag = "" + pTagEt.getText().toString().trim();
         tag = "" + tags;
-        Toast.makeText( this, "yel lo"+tag, Toast.LENGTH_SHORT ).show();
+        //Toast.makeText( this, "yel lo"+tag, Toast.LENGTH_SHORT ).show();
         notes = "" + pNotesEt.getText().toString().trim();
         rating = "" +pRatingEt.getRating();
 
