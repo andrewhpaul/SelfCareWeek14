@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
-    package="com.a_adevelopers.selfcare">
+    package="com.KA2001.selfcare">
 
     <uses-permission android:name="android.permission.RECEIVE_BOOT_COMPLETED" />
     <uses-permission android:name="android.permission.INTERNET" />
@@ -16,23 +16,23 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
-        <activity android:name=".splashscreen">
+        <activity android:name="com.KA2001.selfcare.splashscreen">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
-        <activity android:name=".view.ProductsGroupActivity"></activity>
-        <activity android:name=".view.CreateGroupActivity" />
-        <activity android:name=".view.GroupsActivity" />
-        <activity android:name=".view.ProductDetailsActivity" />
-        <activity android:name=".view.AddExpiryNotificationActivity" />
-        <activity android:name=".view.SelecteNotificationProduct" />
-        <activity android:name=".view.SelectGroupProductActivity" />
-        <activity android:name=".view.NotificationActivity" />
-        <activity android:name=".view.AddProductActivity" />
-        <activity android:name=".MainActivity">
+        <activity android:name="com.KA2001.selfcare.view.ProductsGroupActivity"></activity>
+        <activity android:name="com.KA2001.selfcare.view.CreateGroupActivity" />
+        <activity android:name="com.KA2001.selfcare.view.GroupsActivity" />
+        <activity android:name="com.KA2001.selfcare.view.ProductDetailsActivity" />
+        <activity android:name="com.KA2001.selfcare.view.AddExpiryNotificationActivity" />
+        <activity android:name="com.KA2001.selfcare.view.SelecteNotificationProduct" />
+        <activity android:name="com.KA2001.selfcare.view.SelectGroupProductActivity" />
+        <activity android:name="com.KA2001.selfcare.view.NotificationActivity" />
+        <activity android:name="com.KA2001.selfcare.view.AddProductActivity" />
+        <activity android:name="com.KA2001.selfcare.MainActivity">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 
@@ -40,7 +40,7 @@
             </intent-filter>
         </activity>
 
-        <receiver android:name=".Controller.NotificationReciver" />
+        <receiver android:name="com.KA2001.selfcare.Controller.NotificationReciver" />
         <meta-data
             android:name="preloaded_fonts"
             android:resource="@array/preloaded_fonts" />
