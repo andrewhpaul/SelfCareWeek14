@@ -85,7 +85,7 @@
             android:inputType="text"
             android:layout_below="@id/productExpiryDate"
             android:padding="10dp"
-            android:hint="Enter product URL https://"
+            android:hint="Enter product URL (https://)"
             android:layout_marginTop="16dp"
             android:fontFamily="@font/andika"
             android:textSize="20dp"
@@ -102,6 +102,7 @@
             android:inputType="numberDecimal"
             android:padding="10dp"
             android:text="$"
+            android:textColor="#b5b5b5"
             android:textSize="20dp" />
 
         <EditText
@@ -111,9 +112,9 @@
             android:inputType="text"
             android:layout_below="@id/productPrice"
             android:padding="10dp"
-            android:hint="//Location"
-            android:fontFamily="@font/annie_use_your_telescope"
-            android:textSize="25dp"
+            android:hint="Where was this product purchased?"
+            android:fontFamily="@font/andika"
+            android:textSize="20dp"
             android:layout_marginTop="16dp"
             />
 
@@ -123,6 +124,7 @@
             android:id="@+id/productGroup"
             android:inputType="textPersonName"
             android:layout_below="@id/productPrice"
+            android:visibility="gone"
             android:padding="10dp"
             android:hint="Enter a group for your product"
             android:fontFamily="@font/andika"
@@ -205,6 +207,7 @@
             <Button
                 android:layout_marginTop="12dp"
                 android:layout_marginBottom="12dp"
+                android:layout_marginRight="25dp"
                 android:id="@+id/addInfoBtn"
                 android:visibility="invisible"
                 android:layout_width="wrap_content"

@@ -60,12 +60,12 @@ public class ProductDetailsActivity extends AppCompatActivity {
         pPurchaseDateEt.setText("Purchase Date: "+purchaseDate);
         pExpiryDateEt.setText("Expiry Date: "+expiryDate);
         pUrlEt.setText( "URL: "+url );
-        pPriceEt.setText( "Price: "+price );
+        pPriceEt.setText( "Price: $"+price );
       //  pLocationEt.setText( "Location: "+location );
         pGroupEt.setText( "Group: "+group );
         pTagEt.setText( "Tags: "+tag );
         pNotesEt.setText( "Notes: "+notes );
-        pRatingEt.setText( "Rating (1 to 5): "+rating );
+        pRatingEt.setText( "Rating: "+rating +"/5.0" );
         if (imageUri.toString().equals("null")) {
             pImageView.setImageResource(R.drawable.ic_action_addphoto);
         }
