@@ -79,6 +79,7 @@
         android:text="Price"
         android:layout_gravity="center"/>
     <TextView
+        android:visibility="gone"
         android:id="@+id/location"
         android:layout_width="wrap_content"
         android:textSize="20dp"

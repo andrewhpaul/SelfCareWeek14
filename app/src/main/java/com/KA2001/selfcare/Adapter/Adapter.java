@@ -76,7 +76,7 @@ public class Adapter extends RecyclerView.Adapter<Adapter.Holder> implements Fil
         holder.price.setVisibility( View.GONE );
         holder.location.setVisibility( View.GONE );
         holder.group.setVisibility( View.GONE );
-        holder.tag.setText( tag );
+        holder.tag.setText( "Tags: "+tag );
         holder.notes.setVisibility( View.GONE );
         holder.rating.setVisibility( View.GONE );
 
