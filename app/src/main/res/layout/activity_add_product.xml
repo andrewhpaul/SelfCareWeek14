@@ -118,18 +118,25 @@
             />
 
 
-        <EditText
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
+        <androidx.appcompat.widget.AppCompatEditText
             android:id="@+id/productTag"
-            android:inputType="textPersonName"
-            android:layout_below="@id/productLocation"
+            android:layout_width="match_parent"
+            android:background="@drawable/background"
+            android:layout_height="wrap_content"
             android:padding="10dp"
-            android:hint="Enter a few product tags!"
-            android:fontFamily="@font/andika"
-            android:textSize="20dp"
+            android:hint="Enter your product tag"
             android:layout_marginTop="16dp"
-            />
+            android:layout_centerInParent="true"
+            android:inputType="text"/>
+
+
+        <Button
+            android:id="@+id/add"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_margin="12dp"
+            android:text="+"
+            android:gravity="center"/>
 
         <EditText
             android:layout_width="match_parent"
@@ -143,18 +150,6 @@
             android:fontFamily="@font/andika"
             android:textSize="20dp"
             />
-
-       <!-- <EditText
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:id="@+id/productRatings"
-            android:inputType="textPersonName"
-            android:layout_below="@id/productNotes"
-            android:background="@drawable/background"
-            android:padding="10dp"
-            android:hint="Enter your rating (1 to 5)"
-            android:layout_marginTop="16dp"
-            />-->
 
 
         <RatingBar
