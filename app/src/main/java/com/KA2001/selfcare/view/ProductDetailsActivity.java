@@ -62,7 +62,7 @@ public class ProductDetailsActivity extends AppCompatActivity {
         pUrlEt.setText( "URL: "+url );
         pPriceEt.setText( "Price: $"+price );
       //  pLocationEt.setText( "Location: "+location );
-        pGroupEt.setText( "Group: "+group );
+        pGroupEt.setText( "Location: "+group );
         pTagEt.setText( "Tags: "+tag );
         pNotesEt.setText( "Notes: "+notes );
         pRatingEt.setText( "Rating: "+rating +"/5.0" );
