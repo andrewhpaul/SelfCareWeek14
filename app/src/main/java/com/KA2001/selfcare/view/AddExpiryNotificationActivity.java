@@ -85,7 +85,7 @@ public class AddExpiryNotificationActivity extends AppCompatActivity {
         AlarmManager alarmManager= (AlarmManager) getSystemService( ALARM_SERVICE );
         alarmManager.set( AlarmManager.RTC_WAKEUP,/*timesec+ten,pendingIntent*/  c.getTimeInMillis(),pendingIntent );
         Log.i( "qq",String.valueOf(  c.getTimeInMillis() ));
-        insertDate(_image,_name,_expDate,currentDateString);
+        insertDate(_image,_name,"Expiry: " + _expDate,"Alarm: " + currentDateString);
     }
 
 
