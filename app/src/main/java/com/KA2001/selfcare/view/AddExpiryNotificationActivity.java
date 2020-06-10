@@ -19,6 +19,7 @@ import com.KA2001.selfcare.Controller.NotificationReciver;
 import com.KA2001.selfcare.R;
 import com.KA2001.selfcare.db.SqlLite;
 
+import java.text.DateFormat;
 import java.util.Calendar;
 
 public class AddExpiryNotificationActivity extends AppCompatActivity {
@@ -74,6 +75,7 @@ public class AddExpiryNotificationActivity extends AppCompatActivity {
         c.set(Calendar.HOUR_OF_DAY, 0);
         c.set(Calendar.MINUTE, 0);
         c.set( Calendar.SECOND, 0);
+        String currentDateString = DateFormat.getDateInstance(DateFormat.FULL).format(c.getTime());
         Intent intent=new Intent( AddExpiryNotificationActivity.this, NotificationReciver.class );
         intent.putExtra( "name",_name );
         intent.putExtra( "id",id );
@@ -83,12 +85,12 @@ public class AddExpiryNotificationActivity extends AppCompatActivity {
         AlarmManager alarmManager= (AlarmManager) getSystemService( ALARM_SERVICE );
         alarmManager.set( AlarmManager.RTC_WAKEUP,/*timesec+ten,pendingIntent*/  c.getTimeInMillis(),pendingIntent );
         Log.i( "qq",String.valueOf(  c.getTimeInMillis() ));
-        insertDate(_image,_name,_expDate,day +"/"+ (month+1) +"/"+ year);
+        insertDate(_image,_name,_expDate,currentDateString);
     }
 
 
-    private void insertDate(String image, String name, String expDate, String s) {
-        long aa=sqlLite.insertInfo( image,name,expDate,s );
+    private void insertDate(String image, String name, String expDate, String currentDateString) {
+        long aa=sqlLite.insertInfo( image,name,expDate,currentDateString );
 
 
         startActivity( new Intent( AddExpiryNotificationActivity.this, NotificationActivity.class ) );
