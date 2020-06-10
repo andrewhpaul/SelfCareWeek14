@@ -55,7 +55,7 @@ public class ProductsGroupActivity extends AppCompatActivity {
 
         database=new SqlLite( this );
         if(getIntent().getStringExtra( "ID" ).equals( "g_id" )){
-            Toast.makeText( this, "popofdsf", Toast.LENGTH_SHORT ).show();
+            //Toast.makeText( this, "popofdsf", Toast.LENGTH_SHORT ).show();
             id= String.valueOf( Constants.G_ID );
         }else {
             id=getIntent().getStringExtra( "ID" );
@@ -98,8 +98,12 @@ public class ProductsGroupActivity extends AppCompatActivity {
         recyclerView.setAdapter(adapter);
     }
 
+    @Override
+    public void onBackPressed() {
+        startActivity( new Intent( ProductsGroupActivity.this,GroupsActivity.class ) );
+        finish();
 
-
+    }
 
     private void showDialogBox(final String id) {
         final Dialog dialog = new Dialog(this);

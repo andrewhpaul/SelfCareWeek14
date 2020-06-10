@@ -4,6 +4,7 @@ import androidx.appcompat.app.AppCompatActivity;
 import androidx.recyclerview.widget.RecyclerView;
 import androidx.appcompat.widget.Toolbar;
 
+import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.ImageView;
@@ -37,6 +38,14 @@ public class SelecteNotificationProduct extends AppCompatActivity {
         databaseHelper = new SqlLite(this);
         showRecord();
     }
+
+    @Override
+    public void onBackPressed() {
+        startActivity( new Intent( SelecteNotificationProduct.this,NotificationActivity.class ) );
+        finish();
+
+    }
+
     private void showRecord() {
 
         adapter = new SelectAdapterNotification( SelecteNotificationProduct.this,databaseHelper.getAllData());
