@@ -183,7 +183,7 @@ public class MainActivity extends AppCompatActivity implements NavigationView.On
         arrayList=databaseHelper.getAllData();
         for(int i=0;i<arrayList.size();i++){
             Model groupModel=arrayList.get( i );
-            if(groupModel.getTag().contains( newText )){
+            if(groupModel.getTag().contains( newText ) || groupModel.getName().contains( newText )) {
                 search.add( groupModel );
             }
         }
