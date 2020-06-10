@@ -82,7 +82,6 @@ public class AddProductActivity extends AppCompatActivity {
         pUrlEt = findViewById( R.id.productURL );
         pPriceEt = findViewById( R.id.productPrice );
         pLocationEt = findViewById( R.id.productLocation );
-        pGroupEt = findViewById( R.id.productGroup );
         pTagEt = findViewById( R.id.productTag );
         pNotesEt = findViewById( R.id.productNotes );
         pRatingEt = findViewById( R.id.productRatings );
